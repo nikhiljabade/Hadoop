@@ -22,9 +22,9 @@ public class MultipleInputsDriver extends Configured implements Tool{
 
     public int run(String[] args) throws Exception {
 
-        Path inputPathOne = new Path("./src/main/java/com/cloudwick/hadoop/assignment/multipleinputs/MultipleInputsInput/multipleinputsairline.txt");
-        Path inputPathTwo = new Path("./src/main/java/com/cloudwick/hadoop/assignment/multipleinputs/MultipleInputsInput/multipleinputsbooks.txt");
-        Path outputPath = new Path("./src/main/java/com/cloudwick/hadoop/assignment/multipleinputs/MultipleInputsOutput");
+        Path inputPathOne = new Path(args[0]);
+        Path inputPathTwo = new Path(args[1]);
+        Path outputPath = new Path(args[2]);
 
         Configuration conf = getConf();
         Job job = new Job(conf, this.getClass().toString());

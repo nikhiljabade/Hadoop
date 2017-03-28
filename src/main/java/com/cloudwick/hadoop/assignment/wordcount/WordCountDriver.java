@@ -17,8 +17,8 @@ public class WordCountDriver extends Configured implements Tool {
 
     public int run(String[] args) throws Exception {
 
-        Path inputPath = new Path("./src/main/java/com/cloudwick/hadoop/assignment/wordcount/WordCountInput/wordcountinput.txt");
-        Path outputPath = new Path("./src/main/java/com/cloudwick/hadoop/assignment/wordcount/WordCountOutput");
+        Path inputPath = new Path(args[0]);
+        Path outputPath = new Path(args[1]);
 
         Configuration conf = getConf();
         @SuppressWarnings("deprecation")

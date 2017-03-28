@@ -18,8 +18,8 @@ public class SecondarySortDriver extends Configured implements Tool {
     }
 
     public int run(String[] args) throws Exception {
-        Path inputPath = new Path("./src/main/java/com/cloudwick/hadoop/assignment/secondarysort/SecondarySortInput/secondarysortinput.txt");
-        Path outputPath = new Path("./src/main/java/com/cloudwick/hadoop/assignment/secondarysort/SecondarySortOutput");
+        Path inputPath = new Path(args[0]);
+        Path outputPath = new Path(args[1]);
 
         Configuration conf = getConf();
         Job job = new Job(conf, this.getClass().toString());

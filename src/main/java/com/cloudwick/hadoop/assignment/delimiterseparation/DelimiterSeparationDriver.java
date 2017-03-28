@@ -20,8 +20,8 @@ public class DelimiterSeparationDriver extends Configured implements Tool{
 
     public int run(String[] args) throws Exception {
 
-        Path inputPath = new Path("./src/main/java/com/cloudwick/hadoop/assignment/delimiterseparation/DelimiterSeparationInput/delimiterseparationinput.txt");
-        Path outputPath = new Path("./src/main/java/com/cloudwick/hadoop/assignment/delimiterseparation//DelimiterSeparationOutput");
+        Path inputPath = new Path(args[0]);
+        Path outputPath = new Path(args[1]);
 
         Configuration conf = getConf();
         conf.set("textinputformat.record.delimiter", "|");
