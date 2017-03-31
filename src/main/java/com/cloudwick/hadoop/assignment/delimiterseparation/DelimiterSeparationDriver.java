@@ -24,7 +24,7 @@ public class DelimiterSeparationDriver extends Configured implements Tool{
         Path outputPath = new Path(args[1]);
 
         Configuration conf = getConf();
-        conf.set("textinputformat.record.delimiter", "|");
+        conf.set("textinputformat.record.delimiter", "$");
         @SuppressWarnings("deprecation")
         Job job = new Job(conf, this.getClass().toString());
         FileSystem fileSystem = FileSystem.get(conf);
